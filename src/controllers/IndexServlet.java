@@ -28,9 +28,9 @@ public class IndexServlet extends HttpServlet {
         super();
     }
 
-        /**
-         * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-         */
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
@@ -47,8 +47,7 @@ public class IndexServlet extends HttpServlet {
                                    .getResultList();
 
         // 全件数を取得
-        long messages_count = (long)em.createNamedQuery("getMessagesCount", Long.class)
-                                      .getSingleResult();
+        long messages_count = (long)em.createNamedQuery("getMessagesCount", Long.class).getSingleResult();
 
         em.close();
 
